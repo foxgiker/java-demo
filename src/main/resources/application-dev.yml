@@ -1,0 +1,41 @@
+spring:
+  #将sqltoy 放于开始位置，避免很多开发者忽视了spring.sqltoy 开头，变成了sqltoy开头导致无法加载
+  sqltoy:
+    # 多个路径用逗号分隔(请务必看仔细)
+    sqlResourcesDir: classpath:sqltoy
+    # 默认为false，debug模式将打印执行sql,并自动检测sql文件更新并重新加载
+    debug: true
+    # 出现重复sqlId是否抛出异常终止启动,默认值为true
+    #breakWhenSqlRepeat: true
+    # 数据库保留字兼容处理(原则上不要使用数据库保留字,多个用逗号分隔)
+    #reservedWords: maxvalue,minvalue
+    # 提供统一字段:createBy createTime updateBy updateTime 等字段补漏性(为空时)赋值(可选配置)
+    #unifyFieldsHandler: com.sqltoy.plugins.SqlToyUnifyFieldsHandler
+    # 慢sql执行时长阈值,这里设置2秒为慢查询，输出日志提示
+    printSqlTimeoutMillis: 2000
+  datasource:
+    name: dataSource
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: _root_
+    isAutoCommit: false
+    # 注意characterEncoding=utf-8 参数,在mysql6~7 版本下不设置like 中文时会无法匹配
+    url: jdbc:mysql://1.14.248.193:3308/java_demo?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+
+  liquibase:
+    #变更文件所在的目录
+    change-log: classpath:liquibase/changelog/master.sql
+    # 默认的数据库schema
+    default-schema: java_demo
+    # 逗号分隔的多个运行时上下文
+    contexts: master,dev
+    #逗号分割的多个运行时标签
+    labels: master-label,dev-label
+    #用于跟踪当前liquibase用例的表名
+    database-change-log-lock-table: liquibase_current
+    #用于跟踪数据库变化历史的表名
+    database-change-log-table: liquibase_history
+    #用于存储liquibase的库
+    liquibase-schema: liquibase
+    # 如果不配置，就是使用springboot的默认数据源
