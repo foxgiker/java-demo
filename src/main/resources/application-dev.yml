@@ -25,17 +25,16 @@ spring:
 
   liquibase:
     #变更文件所在的目录
-    change-log: classpath:liquibase/changelog/master.sql
+    change-log: classpath:liquibase/change-root.xml
     # 默认的数据库schema
     default-schema: java_demo
     # 逗号分隔的多个运行时上下文
-    contexts: master,dev
+    contexts: prod,dev
     #逗号分割的多个运行时标签
-    labels: master-label,dev-label
+    labels: 1.0
     #用于跟踪当前liquibase用例的表名
     database-change-log-lock-table: liquibase_current
     #用于跟踪数据库变化历史的表名
     database-change-log-table: liquibase_history
     #用于存储liquibase的库
     liquibase-schema: liquibase
-    # 如果不配置，就是使用springboot的默认数据源

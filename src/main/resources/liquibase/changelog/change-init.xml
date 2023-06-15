@@ -1,0 +1,68 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+<changeSet  author="foxgiker" contextFilter="dev" labels="1.0"  id="fx_user">
+    <validCheckSum> </validCheckSum>
+    <createTable remarks="用户表"
+                 tableName="fx_user">
+        <column  name="id"  type="varchar(36)">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+
+        <column name="number" type="BIGINT"  remarks="用户编号8位">
+            <constraints nullable="false"/>
+        </column>
+
+        <column name="name" type="varchar(36)" remarks="昵称">
+            <constraints nullable="false"/>
+        </column>
+
+        <column name="user_name" type="varchar(36)" remarks="用户名">
+            <constraints nullable="false"/>
+        </column>
+
+        <column name="password" type="varchar(36)" remarks="密码">
+            <constraints nullable="false"/>
+        </column>
+
+        <column name="salt" type="varchar(4)" remarks="盐">
+            <constraints nullable="false"/>
+        </column>
+
+        <column name="city" type="varchar(36)" remarks="用户所在城市">
+            <constraints nullable="false"/>
+        </column>
+
+        <column name="rank" type="tinyint" remarks="用户等级">
+            <constraints nullable="false"/>
+        </column>
+        <column name="integral" type="BIGINT" defaultValueNumeric="0" remarks="用户积分">
+            <constraints nullable="true" />
+        </column>
+        <column name="avatar" type="varchar(255)" remarks="头像">
+            <constraints nullable="false"/>
+        </column>
+        <column name="wx_openid" type="varchar(36)" remarks="微信openid">
+            <constraints nullable="true"/>
+        </column>
+
+
+        <column name="create_by" type="varchar(36)" remarks="创建人">
+            <constraints nullable="true"/>
+        </column>
+        <column name="create_time" type="DATETIME" remarks="创建时间">
+            <constraints nullable="true"/>
+        </column>
+        <column name="update_by" type="varchar(36)" remarks="修改人">
+            <constraints nullable="true"/>
+        </column>
+        <column name="update_time" type="DATETIME" remarks="修改时间">
+            <constraints nullable="true"/>
+        </column>
+    </createTable>
+</changeSet>
+</databaseChangeLog>

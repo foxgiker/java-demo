@@ -1,0 +1,54 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet  author="foxgiker" contextFilter="dev" labels="1.0"  id="test_tree_student">
+        <createTable remarks="测试树表"
+                     tableName="test_tree_student">
+            <column  name="id"  type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+
+            <column name="name" type="varchar(36)" remarks="昵称">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="sex" type="tinyint" remarks="性别">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="school" type="varchar(36)" remarks="学校">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="grade" type="varchar(36)" remarks="年纪">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="clazz" type="varchar(4)" remarks="班级">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="chinese" type="BIGINT" remarks="语文成绩" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="math" type="BIGINT" remarks="数学成绩" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="english" type="BIGINT" remarks="英语成绩" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet  author="foxgiker" contextFilter="dev" labels="1.0"  id="test_tree_student_data">
+        <loadData file="classpath:liquibase/data/test_tree_student.csv"  tableName="test_tree_student"/>
+    </changeSet>
+
+</databaseChangeLog>
