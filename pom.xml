@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>17</java.version>
 		<sqltoy.version>5.3.28</sqltoy.version>
+		<hutool.version>5.8.20</hutool.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -25,6 +26,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -92,6 +97,14 @@
 			<artifactId>sagacity-sqltoy</artifactId>
 			<version>${sqltoy.version}</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/cn.hutool/hutool-core -->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-core</artifactId>
+			<version>${hutool.version}</version>
+		</dependency>
+
 
 
 	</dependencies>

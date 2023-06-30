@@ -1,0 +1,50 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet  author="foxgiker" contextFilter="dev" labels="1.0"  id="zw_hour_pillar_map">
+        <createTable remarks="时辰干支对照表"
+                     tableName="zw_hour_pillar_map">
+            <column  name="id"  type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="day_stem" type="varchar(8)" remarks="日干">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="branch" type="varchar(36)" remarks="地支">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="time_start" type="tinyint" remarks="开始时间">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="time_end" type="tinyint" remarks="结束时间">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="remark" type="varchar(36)" remarks="备注">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="name" type="varchar(36)" remarks="时柱">
+                <constraints nullable="false"/>
+            </column>
+
+
+
+
+
+        </createTable>
+    </changeSet>
+
+    <changeSet  author="foxgiker" contextFilter="dev" labels="1.0"  id="zw_hour_pillar_map_data">
+        <loadData file="classpath:liquibase/data/zw_hour_pillar_map.csv"  tableName="zw_hour_pillar_map"/>
+    </changeSet>
+
+</databaseChangeLog>

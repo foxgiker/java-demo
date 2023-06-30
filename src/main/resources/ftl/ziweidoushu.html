@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+
+    <!-- 新 Bootstrap5 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/jquery.datetimepicker.min.css">
+
+    <!--  popper.min.js 用于弹窗、提示、下拉菜单 -->
+    <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+
+    <!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./assets/js/jquery.datetimepicker.full.min.js"></script>
+    <style type="text/css">
+        .cell{
+            min-height: 150px;
+            min-width: 150px;
+            padding: 0;
+            position: relative;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .center{
+            min-width:300px;
+            min-height: 300px;
+            margin: 0;
+            padding: 0;
+        }
+        .star-ul{
+            list-style-type: none;
+            padding:2px 0 0 2px;
+        }
+        .star{
+            display: inline-block;
+            writing-mode: vertical-lr;
+        }
+        .font-bold{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="" style="width: 750px;margin: auto;">
+    <div class="container">
+        <div class="row " style = "padding:0">
+            <div class="col cell" index="3" style = "border:1px solid red"></div>
+            <div class="col cell" index="4" style = "border:1px solid red"></div>
+            <div class="col cell" index="5" style = "border:1px solid red"></div>
+            <div class="col cell" index="6" style = "border:1px solid red"></div>
+        </div>
+
+        <div class="row" style = "padding:0">
+            <div class="col-md-3" style = "border:1px solid red;padding:0">
+                <div class="cell" index="2" style="border-bottom: 1px solid red;"></div>
+                <div class="cell" index="1"></div>
+            </div>
+            <div class="col-md-6" style = "border:1px solid red;padding-top:calc(var(--bs-gutter-x) * .5);padding-bottom:calc(var(--bs-gutter-x) * .5)">
+                <div class="center-wrapper">
+
+                    <div class="destiny-picker" id="destiny-picker">
+                        <input type="text" id="datetimepicker">
+                        <p >
+                            <button id="calcBtn" type="button" class="btn btn-info col-12">开始</button>
+                        </p>
+                    </div>
+                    <div class="destiny-panel"></div>
+                </div>
+            </div>
+            <div class="col-md-3" style = "border:1px solid red;padding:0">
+                <div class="cell" index="7" style="border-bottom: 1px solid red;"></div>
+                <div class="cell" index="8"></div>
+            </div>
+        </div>
+
+        <div class="row " style = "padding:0">
+            <div class="col cell" index="0"  style = "border:1px solid red"></div>
+            <div class="col cell" style = "border:1px solid red" index="11"></div>
+            <div class="col cell" style = "border:1px solid red" index="10"></div>
+            <div class="col cell" style = "border:1px solid red" index="9"></div>
+        </div>
+    </div>
+</div>
+<script src="./assets/js/zw.js"></script>
+</body>
+</html>

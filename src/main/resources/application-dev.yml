@@ -1,4 +1,9 @@
 spring:
+  mvc:
+    static-path-pattern: /assets/**
+  web:
+    resources:
+      static-locations: classpath:/static/
   #将sqltoy 放于开始位置，避免很多开发者忽视了spring.sqltoy 开头，变成了sqltoy开头导致无法加载
   sqltoy:
     # 多个路径用逗号分隔(请务必看仔细)
@@ -38,3 +43,22 @@ spring:
     database-change-log-table: liquibase_history
     #用于存储liquibase的库
     liquibase-schema: liquibase
+  freemarker:
+    #指定HttpServletRequest的属性是否可以覆盖controller的model的同名项
+    allow-request-override: false
+    #req访问request
+    request-context-attribute: req
+    #后缀名freemarker默认后缀为.ftl，当然你也可以改成自己习惯的.html
+    suffix: .html
+    #设置响应的内容类型
+    content-type: text/html;charset=utf-8
+    #是否允许mvc使用freemarker
+    enabled: true
+    #是否开启template caching
+    cache: false
+    #设定模板的加载路径，多个以逗号分隔，默认: [“classpath:/templates/”]
+    template-loader-path: classpath:/ftl/
+    #设定Template的编码
+    charset: UTF-8
+    # ftl文件的更新时间
+    template_update_delay: 0
